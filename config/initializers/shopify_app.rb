@@ -4,4 +4,7 @@ ShopifyApp.configure do |config|
   config.redirect_uri = "https://kevin-shopifyapps.fwd.wf/auth/shopify/callback"
   config.scope = "read_orders, write_products"
   config.embedded_app = true
+  config.webhooks = [
+    {topic: 'carts/update', address: 'https://kevin-shopifyapps.fwd.wf/webhooks/carts_update', format: 'json'}
+  ]
 end
